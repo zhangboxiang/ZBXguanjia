@@ -1,0 +1,36 @@
+<div ng-controller="occupancy" class="xwk_occupancy">
+	<!-- <ul class="xwk_subnav">
+		<li>
+			<a href="javascript:;" ui-sref="mainpath.homepage">首页</a>
+		</li>
+		<li style="color: #CDCDCD;">
+			>
+		</li>
+		<li>
+			<a href="javascript:;">账户资料</a>
+		</li>
+	</ul> -->
+
+	<div class="xwk_mylist">
+		<div class="xwk_head" id="img_area" ng-model="img">
+			<img style="width:100%;height:100%;" src="{{arr.img}}" alt="">
+		</div>
+		<input type="file" value="image" id="img_input" class="btn btn-info form"/>
+		<!-- <textarea id="result" class="xwk_text"></textarea> -->
+		<p>
+			<span>昵称</span>
+			<input type="text" name="name" ng-model="arr.name" class="form-control">
+		</p>
+		<p>
+			<span>请输入新的密码：</span>
+			<input type="password" class="form-control " placeholder="密码由字母和数字组成" ng-model="x_password">
+			<i ng-show="xwk_t">{{xwk_title}}</i>
+		</p>
+		<p>
+			<button type="button" class="btn btn-primary" ng-click="xwk_sub()">提交更改</button>
+			<i ng-show="xwk_tsk" style="font: 18px;">修改成功</i>
+		</p>
+
+
+	</div>
+</div>

@@ -1,0 +1,529 @@
+﻿/*赵万宝--请大家注意 css 命名,加上前缀*/
+
+.smt_zhu {
+  float: left;
+  width: 100%;
+  height: 620px;
+  background: #F5F5F5;
+}
+
+.smt_zhu1 {
+  width: 1100px;
+  height: 570px;
+  margin: 20px auto;
+}
+
+.smt_left {
+  float: left;
+  width: 800px;
+  height: 580px;
+}
+
+.smt_top {
+  float: left;
+  width: 800px;
+  /*height: 80px;*/
+  background: #fff;
+  overflow: hidden;
+  padding:20px 0;
+
+}
+
+
+.smt_tiao{
+  float: left;
+  width: 120px;
+  height: 60px;
+  background: #00A1CB;
+  cursor: pointer;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  margin-left: 10px;
+  /*margin-top: 10px;*/
+  border-radius:4px;
+  opacity:.7;
+}
+.smt_tiao1{
+  float: left;
+  width: 120px;
+  height: 60px;
+  background: green;
+  cursor: pointer;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  margin-left: 210px;
+  /*margin-top: 10px;*/
+  border-radius:4px;
+  opacity:.7;
+}
+
+.smt_tiao2{
+  float: left;
+  width: 120px;
+  height: 60px;
+  background: red;
+  cursor: pointer;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  margin-left: 210px;
+  /*margin-top: 10px;*/
+  border-radius:4px;
+  opacity:.7;
+}
+
+.smt_tubiao {
+  float: left;
+  width: 800px;
+  height: 370px;
+  margin-top: 50px;
+  background: #fff;
+}
+
+.smt_tubiao1 {
+  width: 780px;
+  height: 360px;
+  margin-top: 20px;
+}
+
+.chart {
+  float: left;
+  margin-left: 5px;
+}
+
+.smt_right {
+  float: right;
+  width: 280px;
+  height: 521px;
+  background: #fff;
+}
+
+
+/****************日历*************/
+
+.smt_right1 {
+  float: right;
+  margin-right: 10px;
+}
+.smt_left1 {
+  float: left;
+}
+
+.account-box {
+  background: #fff;
+  overflow: hidden;
+  height: 288px;
+  border: 1px solid #ccc;
+}
+
+.account-title {
+  border-bottom: 2px solid;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.f-btn-fhby {
+  height: 30px;
+  line-height: 30px;
+  color: #f77b10;
+  border: 1px solid #f77b10;
+  font-size: 14px;
+  display: block;
+  width: 85px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.f-btn-jian {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  border-right: 0px;
+  margin-top: 10px;
+  text-align: center;
+  width: 20px;
+  background: #ececec;
+  color: #666;
+  border-radius: 4px;
+  position: relative;
+  left: 2px;
+  cursor: pointer;
+}
+
+.f-btn-jia {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  border-left: 0px;
+  margin-top: 10px;
+  text-align: center;
+  width: 20px;
+  background: #ececec;
+  color: #666;
+  border-radius: 4px;
+  position: relative;
+  left: -2px;
+  cursor: pointer;
+}
+
+.f-riqi {
+  width: 90px;
+  padding: 0 5px;
+  background: #fff;
+  color: #666;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 10px;
+  display: block;
+}
+
+.f-rili-table tbody td {
+  background: #fff;
+  position: relative;
+}
+
+.f-rili-table tbody tr {
+  border-bottom: 1px dashed #ccc;
+}
+
+.f-rili-table .f-today {
+  background-color: #faf1de;
+}
+
+.f-rili-table .f-on {
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+.f-number {
+  cursor: pointer;
+}
+
+.f-rili-table {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.f-rili-th {
+  float: left;
+  width: 14.25%;
+  text-align: center;
+  line-height: 46px;
+  height: 46px;
+  background-color: #F9EADE;
+  color: #333;
+}
+
+.f-td {
+  border-bottom: 1px dashed #ccc;
+  float: left;
+  width: 14.25%;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+
+.f-yuan {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 13px;
+  left: 50%;
+  margin-left: 10px;
+  background: url(../images/yuan.png) no-repeat center;
+}
+
+.f-table-msg {
+  position: absolute;
+  z-index: 2;
+  top: 34px;
+  left: 50%;
+  margin-left: -120px;
+  width: 280px;
+  background: url(../images/bg-msg.png) no-repeat bottom;
+  line-height: 55px;
+  height: 46px;
+  text-align: center;
+  display: none;
+  color: #666;
+}
+
+
+/**************手风琴***********/
+
+.smt_shou {
+  float: left;
+  width: 280px;
+  margin: 10px auto;
+  height: 220px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  position: relative;
+  margin-top: 50px;
+
+}
+
+.smt_shou>h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/**
+ * Submenu
+ -----------------------------*/
+
+.submenu {
+  display: none;
+  background: #444359;
+  font-size: 14px;
+}
+
+.submenu li {
+  border-bottom: 1px solid #4b4a5e;
+}
+
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: #d9d9d9;
+  padding: 12px;
+  padding-left: 42px;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.submenu a:hover {
+  background: #b63b4d;
+  color: #FFF;
+}
+
+
+/******************************小图标******************************/
+
+.zeng_msgbox_layer,
+.zeng_msgbox_layer .gtl_ico_succ,
+.zeng_msgbox_layer .gtl_ico_fail,
+.zeng_msgbox_layer .gtl_ico_hits,
+.zeng_msgbox_layer .gtl_ico_clear,
+.zeng_msgbox_layer .gtl_end {
+  display: inline-block;
+  height: 54px;
+  line-height: 54px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #606060;
+  background-repeat: no-repeat
+}
+
+.smt_zi {
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+}
+
+
+
+/****************************************日历********************************************/
+
+#calendar{
+  width: 100%;
+}
+
+
+.sc-calendar {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  font-family: "Microsoft Yahei";
+  color: #4A4A4A;
+  box-shadow: 2px 4px 5px #bdbdbd;
+  border-width: 1px 0 0 1px;
+  border-color: #E6E4E0;
+  border-style: solid;
+  float: left;
+  margin-right: 20px;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  font-size: 16px;
+}
+
+.sc-header {
+  height: 35px;
+  border-bottom: 0;
+}
+.sc-body {
+  height: 93%;
+  clear: both;
+  box-shadow: 2px 4px 5px #bdbdbd;
+}
+.sc-week {
+  height: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 30px;
+}
+.sc-days {
+  height: 88%;
+}
+.sc-item {
+  height:39px;
+  float: left;
+  font-weight: 400;
+  font-size: 12px;
+  color: #565555;
+  width: 14.285%;
+  padding-top: 10px;
+  background-color: #ffffff;
+  border-width: 0 0 1px 1px;
+  border-color: #F1EBE4;
+  border-style: solid;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.item-nolunar {
+  padding-top: 20px;
+}
+.sc-item:nth-child(7n) .day, .sc-item:nth-child(7n+6) .day {
+  color: rgba(224, 8, 8, 0.74);
+}
+.sc-vocation {
+  background-color: #FFEBEC;
+}
+.sc-mark{
+  background-color: #E5FBFA;
+}
+.sc-vocation:before {
+  content: '休';
+  display: block;
+  position: absolute;
+  font-size: 0.7em;
+  width: 1.2em;
+  font-weight: 100;
+  color: white;
+  background-color: #E00808;
+  margin-top: -10px;
+}
+.sc-othermenth {
+  color: #C1C0C0 !important;
+}
+.sc-othermenth .day, .sc-othermenth .lunar-day {
+  color: #C1C0C0 !important;
+}
+.sc-active-day, .sc-selected {
+  border: 1px solid orange;
+}
+.sc-today {
+  background-color: orange;
+  color: white;
+  border: 1px solid orange;
+}
+.sc-item .day {
+  font-size: 1.5em;
+}
+.sc-today .day {
+  color: white !important;
+}
+.sc-item .lunar-day {
+  font-size: 10px;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sc-festival .lunar-day {
+  color: #E00808;
+}
+
+/*.sc-item:last-child, .sc-item:nth-child(7n) {
+  border-width: 0 1px 1px 1px;
+}*/
+
+.sc-week-item {
+  height: 100%;
+  padding-top: 2%;
+  float: left;
+  width: 14.285%;
+  background-color: #FBEC9C;
+  border-width: 1px 0 1px 1px;
+  border-color: #ECE3B1;
+  border-style: solid;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sc-item-small{
+  font-size: 10px !important;
+}
+.sc-week-item:last-child {
+  border-width: 1px 1px 1px 1px;
+}
+.sc-week-item:nth-child(7n), .sc-week-item:nth-child(7n+6) {
+  color: rgba(224, 8, 8, 0.74)!important;
+}
+.sc-actions {
+  float: left;
+  width: 25%;
+  padding: 5px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.sc-actions:last-child {
+  float: right;
+}
+.sc-actions-big{
+  width: 50%;
+}
+@media screen and (max-width : 500px){
+  .sc-actions{
+    width: 50%;
+  }
+}
+.sc-return-today {
+  display: block;
+  background-color: #F5F5F9;
+  border-radius: 2px;
+  /* border: 1px solid #ccc; */
+  width: 80px;
+  font-size: 0.8em;
+  padding: 0.3em;
+  margin: auto;
+  margin-left: 20px;
+}
+
+.sc-time {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.8em;
+}
+
+.clearfix:after {
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  content: '.';
+}
+

@@ -1,0 +1,47 @@
+﻿<div ng-controller="addition" class="zwb_box">
+	<div class="zwb_main">
+		<div>
+			<p>即将到期的租客</p>
+			<div ng-show="zanwu">
+				<span class="glyphicon glyphicon-time"></span>
+				<p>暂无即将到期的租客</p>
+			</div>
+			<ul ng-show="daoqi">
+				<li ng-repeat="i in arr | myfilter:currentpage*listpage | limitTo:listpage">
+					<div>
+						<span class="glyphicon glyphicon-user"><i>{{i.xingming}}</i></span>
+						<span>{{i.fangjianhao}}</span>
+						<a href="javascript:;" data-toggle="modal" data-target="#myModal">删除</a>
+					</div>
+					<p>联系电话：<span>{{i.lianxidianhua}}</span></p>
+					<p>入住人数：<span>{{i.renshu}}</span>人</p>
+					<p>租期：<span>{{i.ruzhushijian | date:'yyyy-MM-dd'}}</span><span>至</span><span>{{i.daoqishijian | date:'yyyy-MM-dd'}}</span></p>
+					<p>距到期日：<span>{{ary[$index]}}</span>天</p>
+					<!-- 模态框（Modal） -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog" style="left:0;">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title" id="myModalLabel">是否删除？</h4>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">否</button>
+									<button type="button" class="btn btn-primary" ng-click="remove(i,$index)" data-dismiss="modal">是</button>
+								</div>
+							</div>
+							<!-- /.modal-content -->
+						</div>
+						<!-- /.modal -->
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!--分页-->
+		<div style="margin：0 auto;width:95%;text-align: center;height: 50px;" ng-show="arr.length>8?true:false">
+			<button class="btn btn-primary xwk_left" ng-click="prev()" style="outline:none;">上一页</button>
+			<span style="padding:0 20px;font-size:16px;">{{page}}</span>
+			<button class="btn btn-danger xwk_right" ng-click="next()" style="outline:none;">下一页</button>
+		</div>
+	</div>
+</div>

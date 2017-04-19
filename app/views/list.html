@@ -1,0 +1,133 @@
+﻿<div ng-controller="list" class="yhss_main">
+
+	<!--导航-->
+
+	<div class="yhss_adduser">
+		<div class="yhss_list">
+			<div class="yhss_roomlist">
+				<div class="yhss_roomnumer">
+					<p>租客数:(共<span style="margin:0 5px;color:orange;font-size: 17px;">{{sarr.length}}</span>位租客)</p>
+				</div>
+
+			</div>
+			<button ng-click="list()" class="yhss_btn btn btn-outline btn-info"><i class="glyphicon glyphicon-plus"></i>添加租客</button>
+			<button class="yhss_back btn btn-outline btn-danger" ui-sref="mainpath.particulars"><i class="glyphicon glyphicon-share-alt"></i>返回</button>
+		</div>
+		<!--子导航-->
+
+		<div class="yhss_usermain" ng-repeat='i in sarr | myfilter:currentpage*listpage | limitTo:listpage'>
+			<p>
+				<i class="glyphicon glyphicon-user"></i>
+				<a href="javascript:;" title="点击查看住户详情">
+					<i class="glyphicon glyphicon-info-sign" ng-click='yadd()'></i>
+				</a>
+			</p>
+			<ul>
+				<li> 姓 名： <span>{{i.xingming}}</span></li>
+				<li>联系电话：<span>{{i.lianxidianhua}}</span></li>
+				<li>身份证号：<span>{{i.shenfenzhenghao}}</span></li>
+				<li>居 住 地：<span>{{i.juzhudi}}</span></li>
+				<li>起租日期：<span>{{i.ruzhushijian  | date:'yyyy-MM-dd-HH:mm:ss' }}</span></li>
+				<li>到租日期：<span>{{i.daoqishijian | date:'yyyy-MM-dd-HH:mm:ss'}}</span></li>
+				<li>入住人数：<span>{{i.renshu}}</span></li>
+				<li>房间号：<span>{{i.fangjianhao}}</span></li>
+			</ul>
+			<div>
+				<button class="btn btn-info btn-outline" ng-click='xiugai($index)'>修改</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button class="btn btn-danger btn-outline" ng-click='shanchu(i,$index)'>删除</button>
+			</div>
+		</div>
+		<!--添加成功后显示的住户信息-->
+
+		<div class="yhss_hint" ng-show='sarr.length>0?false:true'>
+			<p><i class="glyphicon glyphicon-home"></i></p>
+			<p>暂无租客入住。。。</p>
+			<p>点击“添加租客”录入租客信息，快速管理入住情况</p>
+		</div>
+		<!--未添加住户之前显示的提示信息-->
+	</div>
+
+	<div class="yhss_bigbox">
+		<form class="yhss_bj" name='myform'>
+			<div class="yhss_div">
+				<p>添加租客</p><span><i class="glyphicon glyphicon-remove" ng-click="back()"></i></span>
+			</div>
+			<div class="yhss_form">
+				<!--<form action="" name='myform'>-->
+				<p class="yhss_name"><span>租客姓名</span><input type="text" ng-model="xingming" placeholder="请输入真实姓名" class="form-control yhs_ming" required="required"></p>
+				<p class="yhss_tel"><span>租客电话</span><input type="text" ng-model="lianxidianhua" placeholder="请输入正确的手机号码" class="form-control yhs_phone" required="required" class="yhs_sjh" name='phone' ng-pattern='/^1[34578]\d{9}$/'><i ng-show='myform.phone.$valid'>正确</i><i ng-show='myform.phone.$invalid'></i></p>
+				<p class="yhss_tels"><span>身份证号</span><input type="text" ng-model="shenfenzhenghao" placeholder="请输入正确的身份证号码" class="form-control yhs_id" required="required" name='iphone' ng-pattern='/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/'><i ng-show='myform.iphone.$valid'>正确</i><i ng-show='myform.iphone.$invalid'></i></p>
+				<p class="yhss_address"><span>户籍所在地</span><input type="text" ng-model="juzhudi" placeholder="请输入户籍所在地" class="form-control yhs_hj" required="required"></p>
+				<p class="yhss_start"><span>起租日期</span>
+					<span class="yhs_rq">{{yhy_time|date:'yyyy-MM-dd-HH:mm:ss'}}</span>
+					<!--<input type="text" ng-model="ruzhushijian" class="form-control workinput wicon mr25" id="inpstart" readonly placeholder="点击获取日期">--></p>
+				<!--<p class="yhss_end"><span>到租日期</span><input type="datetime-local" ng-model="lzk_shijian"></p>-->
+        <!--到期时间-->
+        <div class="form-group" style="margin:0px;">
+          <label for="dtp_input1" class="col-md-2 control-label" style="display:inline-block;width:100px;line-height:55px;text-indent:9px;font-weight:normal;">到期时间</label>
+          <div class="input-group date form_datetime col-md-5" data-date="2017-03-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1" style="padding-top:10px;">
+            <input class="form-control" size="16" type="text" value="" id="ii" readonly>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+          </div>
+          <input type="hidden" id="dtp_input1" value="" /><br/>
+        </div>
+        <!--到期时间-->
+				<p class="yhss_peoplenum">
+					<span class="yhss_span">选择房间号</span>
+					<select ng-model="yhs_sel" ng-click="yhs_s(yhs_sel)">
+						<optiion selected="selected">请选择</optiion>
+						<option ng-repeat="x in yhs_arr" value="{{x}}">{{x.fangjianhao}}</option>
+					</select>
+					<span style="margin-top: 5px;">人数</span>
+					<input type="button" ng-click=fn() class="btn btn-info" value="--" style="margin-left: 15px;width: 35px;height: 35px; margin-top:-8px;">
+					<span ng-model="renshu">{{shu}}</span>
+					<input type="button" ng-click=fn1() class="btn btn-info" value="+" style="width: 35px;height: 35px;margin-top:-8px;" >
+				</p>
+				<p class="yhs_jg"><span>价格</span><input type="number" ng-model="jiage" placeholder="请输入租金" class="form-control yhs_money" required="required"></p>
+				<!--</form>-->
+				<div class="yhss_bar">
+					<span>备注</span>
+					<textarea rows="5" cols="35" ng-model="neirong" style="text-indent: 25px;"></textarea>
+				</div>
+
+			</div>
+			<div class="yhss_next">
+				<button class="btn btn-info" ng-click="yhs_next()">下一步</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="yhs_xiugai">
+		<div class="yhs_xg">
+			<div class="yhs_xgform">
+				<div class="yhss_div">
+					<p>修改信息</p><span><i class="glyphicon glyphicon-remove" ng-click="back()"></i></span>
+				</div>
+				<p class="yhss_xgname"><span>租客姓名</span><input type="text" ng-model="yhs_xq.xingming" placeholder="请输入姓名" class="form-control yhs_ming" required="required"></p>
+				<p class="yhss_xgtel"><span>租客电话</span><input type="text" ng-model="yhs_xq.lianxidianhua" placeholder="请输入正确的手机号码" class="form-control yhs_phone" required="required" class="yhs_sjh" name='phone' ng-pattern='/^1[34578]\d{9}$/'><i ng-show='myform.phone.$valid'>正确</i><i ng-show='myform.phone.$invalid'></i></p>
+				<p class="yhss_xgtels"><span>身份证号</span><input type="text" ng-model="yhs_xq.shenfenzhenghao" placeholder="请输入正确的身份证号码" class="form-control yhs_id" required="required" name='iphone' ng-pattern='/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/'><i ng-show='myform.iphone.$valid'>正确</i><i ng-show='myform.iphone.$invalid'></i></p>
+				<p class="yhss_xgaddress"><span>户籍所在地</span><input type="text" ng-model="yhs_xq.juzhudi" placeholder="请输入户籍所在地" class="form-control yhs_hj" required="required"></p>
+				<p class="yhs_xgjg"><span>价格</span><input type="number" ng-model="yhs_xq.jiage" placeholder="请输入租金" class="form-control yhs_money" required="required"></p>
+
+				<!--<p class="yhss_xgend"><span>到租日期</span><input type="text" ng-model="yhs_xq.daoqishijian | date:'yyyy-MM-dd'" class="form-control workinput wicon mr25" id="inpend" readonly placeholder="点击获取日期"></p>-->
+				<p class="yhss_xgpeoplenum">
+					<span class="yhss_span">人数</span>
+					<input type="button" ng-click=fn() class="btn btn-info" value="--" style="margin-left: 30px;width: 35px;height: 35px;">
+					<span ng-model="xgrenshu">{{shu}}</span>
+					<input type="button" ng-click=fn1() class="btn btn-info" value="+" style="width: 35px;height: 35px;">
+				</p>
+			</div>
+			<div class="yhss_xgnext">
+				<button class="btn btn-info" ng-click="xgnext()">下一步</button>
+			</div>
+		</div>
+	</div>
+	<!--分页-->
+	<div style="margin：0 auto;width:100%;text-align: center;height: 50px;"style="float:left;margin-top: 40px;" ng-show='sarr.length>4?true:false'>
+		<button class="btn btn-primary xwk_left" ng-click="prev()" style="outline:none;">上一页</button>
+		<span style="padding:0 20px;font-size:16px;">{{page}}</span>
+		<button class="btn btn-danger xwk_right" ng-click="next()" style="outline:none;">下一页</button>
+	</div>
+
+</div>

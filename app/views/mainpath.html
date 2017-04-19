@@ -1,0 +1,43 @@
+<div ng-controller="mainpath">
+  <!--<a ui-sref="mainpath.homepage">赵万宝</a><br />-->
+  <!--<a ui-sref="mainpath.particulars">陈雨露</a><br />-->
+  <!--<a ui-sref="mainpath.list">薛文凯</a><br />-->
+  <!--<a ui-sref="mainpath.occupancy">宋名堂</a><br />-->
+  <!--<a ui-sref="mainpath.remain">余含水</a><br />-->
+  <!--<a ui-sref="mainpath.addition">李志锴</a><br />-->
+  <div class="container-fluid" style="padding:0px">
+    <!--header start-->
+    <div class="lzk_header clearFix">
+      <div class="lzk_logo left" style="text-align:center">
+        <img src="images/home.png"><span>房管家</span>
+      </div>
+      <div class="lzk_username right" style="text-align:center">
+        <div class="lzk_username_img"><img src="{{lzk_arr.img}}" alt=""></div>
+        <span>{{lzk_arr.name}}</span>
+        <button ui-sref="login">退出</button>
+      </div>
+    </div>
+    <!--header end-->
+    <!--main start-->
+    <div class="lzk_main clearFix">
+      <div class="lzk_sidebar left" id="lzk_sideba">
+        <ul class="lzk_ul">
+          <li><a ui-sref="mainpath.homepage">首页</a></li>
+          <li><a ui-sref="mainpath.particulars">房产</a></li>
+          <li><a ui-sref="mainpath.list">租客列表</a></li>
+          <li><a ui-sref="mainpath.occupancy">个人设置</a></li>
+          <!--<li><a ui-sref="mainpath.remain">余含水</a></li>-->
+          <li><a ui-sref="mainpath.addition">到期房</a></li>
+        </ul>
+      </div>
+      <div class="lzk_app">
+          <div ui-view></div>
+      </div>
+    </div>
+    <!--main end-->
+  </div>
+</div>
+<script>
+  var lzk_height = document.documentElement.clientHeight-40;
+  lzk_sideba.style.height = lzk_height+'px'
+</script>

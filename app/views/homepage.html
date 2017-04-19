@@ -1,0 +1,193 @@
+﻿<div ng-controller="homepage" class="smt_zhu">
+
+  <div class="fakeloader"></div>
+
+  <div class="smt_zhu1">
+    <div class="smt_left">
+      <div class="smt_top">
+        <div class="smt_tiao" ui-sref="mainpath.particulars">
+          <div class="glyphicon glyphicon-home" style="color: #fff; margin-top: 12px; text-align: center; line-height: 20px;">
+            <p>房产</p>
+          </div>
+        </div>
+        <div class="smt_tiao1" ui-sref="mainpath.list">
+          <div class="glyphicon glyphicon-home" style="color: #fff; margin-top: 12px; text-align: center; line-height: 20px;">
+            <p>租客信息</p>
+          </div>
+        </div>
+        <div class="smt_tiao2" ui-sref="mainpath.addition">
+          <div class="glyphicon glyphicon-home" style="color: #fff; margin-top: 12px; text-align: center; line-height: 20px;">
+            <p>到期房</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="smt_tubiao">
+        <div class="smt_tubiao1">
+          <canvas class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" width="800" height="360"></canvas>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="smt_right">
+
+      <div id = 'calendar'>
+
+      </div>
+      <!--
+      作者：1550296923@qq.com
+      时间：2017-03-27
+      描述：biaoge
+  -->
+
+      <div class="smt_shou">
+        <table class="table table-striped table-bordered table-hover asd">
+          <th style="text-align: left; width: 100%;">备忘录 <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="font-size: 12px; text-align: center; float: right; margin-right: 5px;">
+            添加
+          </button> </th>
+          <tr ng-repeat="af in ar" style="cursor: pointer;">
+            <td>
+              <!--
+                      作者：1550296923@qq.com
+                      时间：2017-03-28
+                      描述：
+                  -->
+              <span ng-click="dian" data-toggle="modal" data-target="#myModal2" class="smt_zi">{{af.biaoti}}</span>
+              <div class="modal fade" id="myModalts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="left:0;">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                      </button>
+                      <div class="zeng_msgbox_layer_wrap" id="q_Msgbox" style="top:100px;display:block">
+												<span class="zeng_msgbox_layer" style="z-index:10000" id="mode_tips_v2"><span class="gtl_ico_succ"></span>恭喜，添加成功！
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalts" data-dismiss="modal">
+                        确定
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--
+    作者：1550296923@qq.com
+    时间：2017-03-28
+    描述：删除
+-->
+
+              <button class="btn btn-danger" data-toggle="modal" data-target="#myModal1" style="width: 50px; font-size: 12px; text-align: center; float: right; margin-right: 5px;">
+                删除
+              </button>
+
+              <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="left:0;">
+                  <div class="modal-content">
+                    <div class="modal-header" style="border: none;">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                        是否删除？
+                      </h4>
+                    </div>
+
+                    <div class="modal-footer" style="border: none;">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" data-target="#myModal1">取消
+                      </button>
+                      <button type="button" class="btn btn-danger" ng-click="fn1(af.id)" data-dismiss="modal" data-target="#myModal1">
+                        确定
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </td>
+
+          </tr>
+
+        </table>
+
+        <!--
+          作者：1550296923@qq.com
+          时间：2017-03-27
+          描述：添加模态框
+     -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" style="left:0;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  备忘录标题:
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="备忘录标题" style="margin-top:20px;" ng-model="qw">
+                  </div>
+                  备忘录时间:
+                  <div class="form-group">
+                    <input type="text" class="form-control workinput wicon mr25 time" id="inpstart" readonly ng-model="fg">
+                  </div>
+                </h4>
+              </div>
+              <div class="modal-body">
+                备忘录内容
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" style="margin-top: 20px;" ng-model="qr"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalts" data-dismiss="modal" ng-click="fn()">
+                  提交
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+    作者：1550296923@qq.com
+    时间：2017-03-28
+    描述：标题详情
+-->
+
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" style="left:0;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  备忘录标题:
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="备忘录标题" style="margin-top:20px;" ng-model="qt">
+                    <div class="shijian" style="float: right; color: orangered;">
+                      <!--{{qu | date:'yyyy年MM月dd日 hh:mm:ss'}}-->
+                    </div>
+                  </div>
+                </h4>
+              </div>
+              <div class="modal-body">
+                备忘录内容
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" style="margin-top: 20px;" ng-model="qy"></textarea>
+                  <div class="shijian" style="float: right; color: orangered;">{{qu | date:'yyyy年MM月dd日 hh:mm:ss'}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

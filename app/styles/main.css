@@ -1,0 +1,254 @@
+/*.browsehappy {*/
+  /*margin: 0.2em 0;*/
+  /*background: #ccc;*/
+  /*color: #000;*/
+  /*padding: 0.2em 0;*/
+/*}*/
+
+/*body {*/
+  /*padding: 0;*/
+/*}*/
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+/*.header,*/
+/*.marketing,*/
+/*.footer {*/
+  /*padding-left: 15px;*/
+  /*padding-right: 15px;*/
+/*}*/
+
+/* Custom page header */
+/*.header {*/
+  /*border-bottom: 1px solid #e5e5e5;*/
+  /*margin-bottom: 10px;*/
+/*}*/
+/* Make the masthead heading the same height as the navigation */
+/*.header h3 {*/
+  /*margin-top: 0;*/
+  /*margin-bottom: 0;*/
+  /*line-height: 40px;*/
+  /*padding-bottom: 19px;*/
+/*}*/
+
+/* Custom page footer */
+/*.footer {*/
+  /*padding-top: 19px;*/
+  /*color: #777;*/
+  /*border-top: 1px solid #e5e5e5;*/
+/*}*/
+
+/*.container-narrow > hr {*/
+  /*margin: 30px 0;*/
+/*}*/
+
+/* Main marketing message and sign up button */
+/*.jumbotron {*/
+  /*text-align: center;*/
+  /*border-bottom: 1px solid #e5e5e5;*/
+/*}*/
+/*.jumbotron .btn {*/
+  /*font-size: 21px;*/
+  /*padding: 14px 24px;*/
+/*}*/
+
+/* Supporting marketing content */
+/*.marketing {*/
+  /*margin: 40px 0;*/
+/*}*/
+/*.marketing p + h4 {*/
+  /*margin-top: 28px;*/
+/*}*/
+
+/* Responsive: Portrait tablets and up */
+/*@media screen and (min-width: 768px) {*/
+  /*.container {*/
+    /*max-width: 730px;*/
+  /*}*/
+
+  /* Remove the padding we set earlier */
+  /*.header,*/
+  /*.marketing,*/
+  /*.footer {*/
+    /*padding-left: 0;*/
+    /*padding-right: 0;*/
+  /*}*/
+  /* Space out the masthead */
+  /*.header {*/
+    /*margin-bottom: 30px;*/
+  /*}*/
+  /* Remove the bottom border on the jumbotron for visual effect */
+  /*.jumbotron {*/
+    /*border-bottom: 0;*/
+  /*}*/
+/*}*/
+/*公共样式*/
+/** �������߾� **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements �ṹԪ�� */
+dl, dt, dd, ul, ol, li, /* list elements �б�Ԫ�� */
+pre, /* text formatting elements �ı���ʽԪ�� */
+form, fieldset, legend, button, input, textarea, /* form elements ��Ԫ�� */
+th, td /* table elements ���Ԫ�� */ {
+  margin: 0;
+  padding: 0;
+}
+
+/** ����Ĭ������ **/
+body,
+button, input, select, textarea /* for ie */ {
+  font: 14px/1.5 tahoma, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal;}
+address, cite, dfn, em, var { font-style: normal; } /* ��б����� */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* ͳһ�ȿ����� */
+small { font-size: 12px; } /* С�� 12px �����ĺ����Ķ�, �� small ������ */
+
+/** �����б�Ԫ�� **/
+ul, ol { list-style: none; }
+
+/** �����ı���ʽԪ�� **/
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+
+sup { vertical-align: text-top; } /* ����, ���ٶ��иߵ�Ӱ�� */
+sub { vertical-align: text-bottom; }
+
+/** ���ñ�Ԫ�� **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img ������������ img �ޱ߿� */
+button, input, select, textarea { font-size: 100%; } /* ʹ�ñ�Ԫ���� ie ���ܼ̳������С */
+/* ע��optgroup �޷����� */
+
+/** ���ñ��Ԫ�� **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* ���� HTML5 Ԫ�� */
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+mark { background: #ff0; }
+.left{
+  float:left;
+  display:inline;
+}
+.right{
+  float:right;
+  display:inline;
+}
+.clearFix:after{
+  clear:both;
+  display:block;
+  content: '';
+}
+.clearFix{
+  zoom:1;
+}
+.lzk_header{
+  height:60px;
+  width:100%;
+  background:url(../images/header_bj.jpg);
+  background-size: 100% 100%;
+}
+.lzk_logo{
+  width:105px;
+  height:50px;
+  margin-left:55px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+.lzk_logo span{
+  float:right;
+  height:50px;
+  line-height:50px;
+  width:45px;
+  overflow: hidden;
+}
+.lzk_logo img{
+  width:50px;
+  height:40px;
+  float:left;
+  display:inline;
+  margin-top:5px;
+}
+.lzk_username{
+  width:114px;
+  height:20px;
+  margin:22px 50px 0 0;
+  position:relative;
+}
+.lzk_username button{
+  height:20px;
+  width:40px;
+  lin-height:20px;
+  position:absolute;
+  right:-20px;
+  top:0;
+  font-size:12px;
+  text-align:center;
+  background:blue;
+  opacity: .7;
+  border-radius:4px;
+ border:none;
+  color:white;
+}
+.lzk_username span{
+  float:right;
+  height:20px;
+  line-height:20px;
+  font-size:12px;
+  color:white;
+  margin-right:20px;
+  width:70px;
+  overflow: hidden;
+  text-align:left;
+}
+.lzk_username .lzk_username_img{
+   width:20px;
+   height:20px;
+   float:left;
+   display:inline;
+   border-radius:50%;
+  overflow: hidden;
+ }
+.lzk_username .lzk_username_img img{
+  width:100%;
+  height:100%;
+  float:left;
+}
+.lzk_main{
+  width:100%;
+  height:auto;
+}
+.lzk_sidebar{
+  width:15%;
+  height:100px;
+  border-right:1px solid #cccccc;
+}
+.lzk_ul{
+  width:100%;
+}
+.lzk_ul>li{
+  width:100%;
+  height:40px;
+  border-bottom:1px solid #ccc;
+  text-indent:25px;
+  line-height:40px;
+  background-image:url(../images/nav_bj.jpg);
+  background-repeat:repeat-x;
+  clear:both;
+}
+.lzk_ul>li>a{
+  float:left;
+  width:100%;
+  height:100%;
+  font-size:13px;
+  color:#444444;
+  font-weight:bold;
+  text-indent:40px;
+}
+.lzk_app{
+  width:calc(100% - 15%);
+  overflow-x:hidden;
+}

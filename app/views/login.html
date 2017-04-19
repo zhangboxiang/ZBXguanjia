@@ -1,0 +1,33 @@
+<div ng-controller="login" >
+<div class="lzk_login" style="background-image:url(images/log_bj.jpg);">
+  <div class="lzk_log">
+    <h1 class="lzk_h1"><span>L</span>ogin</h1>
+    <p style="margin-top:30px;">userName</p>
+    <input type="text" class="form-control" ng-model="username">
+    <p>passWord</p>
+    <input type="password" class="form-control" ng-model="password">
+    <button class="btn btn-danger denlu btn-block" ng-click="btn()">Login</button>
+    <p class="lzk_mzc">unregistered?<a ui-sref="register">Go to register</a></p>
+  </div>
+</div>
+  <!--<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">加载模态框</button>-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p>{{innText}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div>
+
+

@@ -1,0 +1,173 @@
+﻿<div ng-controller="particulars" class="fangchan">
+	<!-- <h1>房产管理</h1>-->
+
+	<!--上导航-->
+	<div class="cly">
+		<nav>
+			<ul class="cly_left">
+				<!--<li>
+					<a href="">
+						<img src="images/cly_left.png" alt="" />
+					</a>
+				</li>
+				<li>
+					8888888房号(0/1)
+				</li>
+				<li class="right">
+					<a href="">
+						<img src="images/cly_right.png" alt="" />
+					</a>
+				</li>-->
+			</ul>
+			<ul class="cly_right" >
+				<li>
+
+					<a href="" style="text-decoration:none;margin:0 auto;" ng-bind="time | date:'yyyy-MM-dd HH:mm:ss'">
+
+
+					</a>
+				</li>
+
+			</ul>
+		</nav>
+
+		<!--功能区-->
+
+		<div class="cly_zhu clear">
+
+			<div class="left">
+				<img src="images/cly_img1.png" alt="" />
+			</div>
+			<div class="left">
+				<p></p>
+				<ul>
+					<li>共<span style="margin:0 5px;">{{arr.length}}</span>套</li>
+					<li>闲置<span style="color:orange;margin:0 5px;">{{arr.length-arr1.length}}</span>套</li>
+				</ul>
+			</div>
+			<div class="left">
+				<ul>
+					<li ng-click="add()">
+						+添加房号
+					</li>
+					<li ng-model="gengduo" ng-click='paixu()'>
+						房号排序
+					</li>
+					<input ng-model="js" style="margin-top:3px; border-radius:6px;outline: none;">
+						<li>
+							搜索房间号（及关键字）
+						</li>
+					<!--</input>-->
+				</ul>
+			</div>
+
+		</div>
+		<!--添加区-->
+
+		<div class="cly_zhi">
+			<ul>
+				<li class="digua" ng-repeat="i in arr | filter:js | orderBy:gengduo | myfilter:currentpage*listpage | limitTo:listpage">
+					<a href="javascript:;" ng-class="{red:i.zhuangtai==1}">
+						<div>{{i.fangjianhao}}
+							  <div class="glyphicon glyphicon-chevron-down right zhankai" ng-click="add1(i.$index);">
+							  	  <ul ng-show="xianshi">
+							  	  	<li ng-click="xiugai(i)">修改</li>
+							  	  	<li ng-click="del(i.id,$index)">删除</li>
+							  	  </ul>
+							  </div>
+						</div>
+						<!--<div ng-class="{block:i.zhuangtai==1}">
+
+						</div>-->
+						<div ui-sref="mainpath.list({id:i.id,uid:i.uid})" ng-show="img">
+							<img src="images/cly_img2.png" alt="" />
+						</div>
+						<span ui-sref="mainpath.list({id:i.id,uid:i.uid})" ng-show="xianzhi"></span>
+					</a>
+				</li>
+
+				<!--<li><a href=""></a></li>
+	      		<li><a href=""></a></li>
+	      		<li><a href=""></a></li>
+	      		<li><a href=""></a></li>
+	      		<li><a href=""></a></li>-->
+			</ul>
+		</div>
+
+	</div>
+
+	<!--浮成-->
+	<div class="zwb_bigbox" ng-show="fuceng1"></div>
+	<div class="zwb_bigbox1" ng-show="fuceng2"></div>
+	<div class="zwb_baocun" ng-show="chenggong"><span class="glyphicon glyphicon-ok"></span>保存成功</div>
+	<!--添加新房号-->
+	<div class="zwb_fanghao" ng-show="fanghao">
+		<div class="clear">
+			添加新房号<span class="right" ng-click="tab()">×</span>
+		</div>
+		<div class="clear">
+			<span class="left">房号</span>
+			<input type="text" class="left" placeholder="例如：001" ng-model="fangjianhao" />
+		</div>
+		<!--<div class="clear" ng-click="tab3()">
+			<span class="left">照片</span>
+			<div class="clear left">
+				<i>+</i>
+				<span>0张</span>
+			</div>
+		</div>-->
+		<div>
+			<input type="button" value="取消" ng-click="tab1()"  style="margin-left:90px;" class="btn btn-primary">
+			<input type="button" value="保存" ng-click="tab2()"  style="margin-left:30px;" class="btn btn-danger">
+		</div>
+		<p ng-hide="qingshuru">请输入房号</p>
+		<p ng-hide="xiangtong">不可输入相同房号</p>
+		<p ng-hide="hanzi">不可输入汉字</p>
+	</div>
+	<!--修改房号-->
+	<div class="zwb_xgfh" ng-show="xgfh">
+		<div class="clear">
+			修改房号<span class="right" ng-click="tab()">×</span>
+		</div>
+		<div class="clear">
+			<span class="left">房号</span>
+			<input type="text" class="left" ng-model="fangzi"/>
+		</div>
+		<!--<div class="clear" ng-click="tab3()">
+			<span class="left">照片</span>
+			<div class="clear left">
+				<i>+</i>
+				<span>0张</span>
+			</div>
+		</div>-->
+		<div>
+			<input type="button" value="取消" ng-click="tab1()"  style="margin-left:90px;" class="btn btn-primary">
+			<input type="button" value="修改" ng-click="tab6(i)" style="margin-left:30px;" class="btn btn-danger">
+		</div>
+		<p ng-hide="qingshuru">请输入房号</p>
+		<p ng-hide="xiangtong">不可输入相同房号</p>
+		<p ng-hide="hanzi">不可输入汉字</p>
+	</div>
+	<!--上传图片-->
+	<!--<div class="zwb_sctp" ng-show="sctp">
+		<div class="clear">
+			上传图片<span class="right" ng-click="tab4()">×</span>
+		</div>
+		<div>
+			<div>
+				<i>+</i>
+				<span>照片</span>
+			</div>
+			<p>建议图片小于4MB</p>
+		</div>
+		<div>
+			<button>完成</button>
+		</div>
+	</div>-->
+	<!--分页-->
+		<div class="xwk_page" style="margin：0 auto;width:100%;text-align: center;" ng-show="arr.length>10?true:false">
+			<button class="btn btn-primary xwk_left" ng-click="prev()" style="outline:none;">上一页</button>
+			<span class="xwk_span" style="padding:0 20px;font-size:16px;">{{page}}</span>
+			<button class="btn btn-danger xwk_right" ng-click="next()" style="outline:none;">下一页</button>
+		</div>
+</div>
